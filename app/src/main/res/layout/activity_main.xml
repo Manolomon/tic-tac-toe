@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbn_oneplayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="One Player"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rbn_multiplayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:duplicateParentState="false"
+                android:text="Multiplayer"
+                android:textSize="24sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbn_firstX"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Primero X (J1)"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rbn_firstO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Primero O (J2/CPU)"
+                android:textSize="24sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp" />
+
+    <Button
+        android:id="@+id/btn_comenzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="jugar"
+        android:text="Comenzar"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btn_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clasificacion"
+        android:text="Ver Estadisticas"
+        android:textSize="24sp" />
+
+</LinearLayout>
