@@ -4,145 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".Tabla_Clasificacion">
+    tools:context=".Tabla_Clasificacion"
 
-    <LinearLayout
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    >
+
+    <ListView
+        android:id="@+id/notasLista"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="15dp"
-                android:layout_weight="1"
-                android:text="No. Juegos One Player"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/lbl_onepalyer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_weight="1"
-                android:text="No. Juegos Multiplayer"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/lbl_multiplayer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_weight="1"
-                android:text="Record Minimo Jugadas"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/lbl_recordMinimo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_weight="1"
-                android:text="No. Juegos Cancelados"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/lbl_cancelados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="No. Juegos Empatados"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/lbl_empatados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="20dp"
-                android:text="0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_regresar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:clickable="true"
-        app:backgroundTint="@color/colorPrimary"
+        android:focusable="true"
+        android:layout_marginBottom="0dp"
+        android:onClick="regresarAMenu"
+        app:backgroundTint="@color/design_default_color_primary"
+
+
         app:srcCompat="@android:drawable/ic_menu_revert" />
 </RelativeLayout>

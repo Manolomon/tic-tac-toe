@@ -1,11 +1,11 @@
 package com.manolomon.tictactoe;
 
 import android.content.Intent;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,32 +27,39 @@ public class MainActivity extends AppCompatActivity {
         rbn_firstO = (RadioButton) findViewById(R.id.rbn_firstO);
     }
 
-    public void clasificacion(View v){
+    public void clasificacion(View v) {
         Intent intent = new Intent(this, Tabla_Clasificacion.class);
         startActivity(intent);
     }
 
-    public void jugar(View v){
-        String modoJuego;
-        String jugadorInicial;
-        if(rbn_oneplayer.isChecked()){
-            modoJuego = "oneplayer";
-            if(rbn_firstX.isChecked()){
-                jugadorInicial = "X";
-            }else{
-                jugadorInicial = "O";
-            }
-        }else{
-            modoJuego = "multiplayer";
-            if(rbn_firstX.isChecked()){
-                jugadorInicial = "X";
-            }else{
-                jugadorInicial = "O";
-            }
+
+    public void jugar(View v) {
+        Intent i = new Intent(this, Jugar_Gato.class);
+        String tipoJuego;
+        boolean comienzaJ1;
+        if (this.rbn_oneplayer.isChecked()) {
+            tipoJuego = "Solo";
+        } else if (rbn_multiplayer.isChecked()) {
+            tipoJuego = "Multijugador";
+        } else {
+            Toast.makeText(this,
+                    "Porfavor seleccione el modo de juego",
+                    Toast.LENGTH_SHORT).show();
+            return;
         }
-        Intent intent = new Intent(this, Jugar_Gato.class);
-        intent.putExtra("modo_juego", modoJuego);
-        intent.putExtra("jugador_inicial", jugadorInicial);
-        startActivity(intent);
+
+        if (this.rbn_firstX.isChecked()) {
+            comienzaJ1 = true;
+        } else if (this.rbn_firstO.isChecked()) {
+            comienzaJ1 = false;
+        } else {
+            Toast.makeText(this,
+                    "Porfavor seleccione su tipo de marca",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+        i.putExtra("tipoJuego", tipoJuego);
+        i.putExtra("comienzaJ1", comienzaJ1);
+        startActivity(i);
     }
 }
